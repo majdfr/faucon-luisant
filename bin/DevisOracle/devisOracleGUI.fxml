@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="807.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DevisOracle.guiController">
+  <tabs>
+    <Tab text="Devis Auto">
+      <content>
+        <AnchorPane fx:id="tabDevisAuto" minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="683.0">
+               <children>
+                  <TextField fx:id="txtFileToConvert" layoutX="14.0" layoutY="26.0" prefHeight="25.0" prefWidth="405.0" />
+                  <Button fx:id="btnFileSelector" layoutX="438.0" layoutY="26.0" mnemonicParsing="false" onAction="#onBtnFileSelectorClick" text="Sélectionnez un fichier" />
+                  <Button fx:id="btnConvert" layoutX="521.0" layoutY="81.0" mnemonicParsing="false" onAction="#convertDevis" prefHeight="56.0" prefWidth="205.0" text="Convertir" />
+                  <Pane fx:id="paneDragFileHere" layoutX="21.0" layoutY="63.0" onDragDropped="#onDragFileDropped" onDragOver="#onDragFileOver" prefHeight="91.0" prefWidth="435.0">
+                     <children>
+                        <Label layoutX="195.0" layoutY="37.0" text="Déposez votre fichier ici" />
+                     </children>
+                  </Pane>
+                  <TableView fx:id="tableQuote" layoutX="37.0" layoutY="160.0" prefHeight="292.0" prefWidth="737.0">
+                    <columns>
+                      <TableColumn fx:id="colRef" prefWidth="75.0" text="Référence" />
+                      <TableColumn fx:id="colDesignation" prefWidth="75.0" text="Désignation" />
+                        <TableColumn fx:id="colQuantite" prefWidth="75.0" text="Quantité" />
+                        <TableColumn fx:id="colPrixPublic" prefWidth="75.0" text="Prix Public" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Devis Manuel">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+      <Tab text="Options">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

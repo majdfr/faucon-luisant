@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="devisManuelTab" minHeight="0.0" minWidth="0.0" prefHeight="621.0" prefWidth="1268.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DevisOracle.controllers.DevisManuelTabController">
+
+        <children>
+            <TableView fx:id="tableManualQuote" layoutX="48.0" layoutY="84.0" prefHeight="398.0" prefWidth="1406.0">
+                <columns>
+                    <TableColumn fx:id="colCCManualRefUGAP" prefWidth="122.0" text="Référence UGAP" />
+                    <TableColumn fx:id="colCCManualRef" prefWidth="133.0" text="Référence" />
+                    <TableColumn fx:id="colCCManualDesignation" prefWidth="431.0" text="Désignation" />
+                    <TableColumn fx:id="colCCManualQuantite" minWidth="0.0" prefWidth="125.0" text="Quantité" />
+                    <TableColumn fx:id="colCCManualPrixPublic" prefWidth="164.0" text="Prix Public" />
+                    <TableColumn fx:id="colCCManualPrixUnitaire" prefWidth="130.0" text="Prix Unitaire" />
+                    <TableColumn fx:id="colCCManualPrixVenteHT" prefWidth="178.0" text="Prix HT" />
+                </columns>
+            </TableView>
+            <ChoiceBox fx:id="choiceExportManuelType" layoutX="1129.0" layoutY="554.0" prefWidth="150.0" value="Devis Interne">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Devis Client" />
+                        <String fx:value="Devis Interne" />
+                        <String fx:value="Devis pour analyse" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <Button fx:id="btnAddManualQuoteLine" layoutX="48.0" layoutY="38.0" mnemonicParsing="false" onAction="#onAddManualQuoteLine" text="Ajouter une ligne" />
+            <Button fx:id="btnExportDevisManuel" layoutX="1289.0" layoutY="549.0" mnemonicParsing="false" onAction="#exporterManuel" prefHeight="35.0" prefWidth="206.0" text="Exporter" />
+            <Label layoutX="595.0" layoutY="600.0" prefHeight="31.0" prefWidth="113.0" text="Destination export" />
+            <TextField fx:id="txtDestinationExportFichier" layoutX="1241.0" layoutY="600.0" prefHeight="25.0" prefWidth="254.0" promptText="Fichier" text="devis.xls" />
+            <TextField fx:id="txtDestinationExportDossier" editable="false" layoutX="716.0" layoutY="600.0" prefHeight="25.0" prefWidth="509.0" promptText="Dossier" />
+            <Button fx:id="btnAddSupport" layoutX="691.0" layoutY="51.0" mnemonicParsing="false" onAction="#onAddSupport" text="Ajouter Support" />
+            <Button fx:id="btnRemoveManualQuoteLine" layoutX="172.0" layoutY="38.0" mnemonicParsing="false" onAction="#onRemoveManualQuoteLine" text="Supprimer Ligne" />
+            <Button fx:id="btnCleanManualQuoteTable" layoutX="296.0" layoutY="38.0" mnemonicParsing="false" onAction="#onCleanManualQuoteTable" text="Vider Tableau" />
+
+            <ChoiceBox fx:id="choiceDureeSupportManuel" layoutX="800.0" layoutY="51.0" prefHeight="25.0" prefWidth="89.0" value="1">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="1" />
+                        <String fx:value="2" />
+                        <String fx:value="3" />
+                        <String fx:value="4" />
+                        <String fx:value="5" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <Label layoutX="802.0" layoutY="11.0" prefHeight="40.0" prefWidth="87.0" text="Durée Support (en années)" wrapText="true" />
+      <CheckBox fx:id="checkBoxDevisManuelUtiliserPromos" layoutX="416.0" layoutY="42.0" mnemonicParsing="false" onAction="#onCheckBoxManuelUsePromoAction" prefHeight="17.0" prefWidth="150.0" text="Utiliser refs promo ?" />
+        </children>
+    </AnchorPane>

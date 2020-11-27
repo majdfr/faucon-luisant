@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="arrowTab" minHeight="0.0" minWidth="0.0" prefHeight="621.0" prefWidth="1268.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DevisOracle.controllers.ArrowTabController">
+        <children>
+            <TextField fx:id="txtMargeDegagee" layoutX="613.0" layoutY="556.0" prefHeight="26.0" prefWidth="123.0" />
+            <Label layoutX="611.0" layoutY="532.0" text="Marge Dégagée en %" />
+            <Pane fx:id="paneDragFileHere" layoutX="1185.0" layoutY="11.0" onDragDropped="#onDragFileDropped" onDragOver="#onDragFileOver" prefHeight="58.0" prefWidth="310.0">
+                <children>
+                    <Label layoutX="117.0" layoutY="21.0" text="Déposez votre fichier ici" />
+                </children>
+                <effect>
+                    <Glow />
+                </effect>
+            </Pane>
+
+            <TableView fx:id="tableQuote" layoutX="22.0" layoutY="85.0" prefHeight="400.0" prefWidth="728.0">
+                <columns>
+                    <TableColumn fx:id="colSection" prefWidth="50.0" text="Section" />
+                    <TableColumn fx:id="colRef" prefWidth="75.0" text="Référence" />
+                    <TableColumn fx:id="colDesignation" prefWidth="150.0" text="Désignation" />
+                    <TableColumn fx:id="colQuantite" prefWidth="50.0" text="Quantité" />
+                    <TableColumn fx:id="colPrixPublic" prefWidth="75.0" text="Prix Public" />
+                    <TableColumn fx:id="colPourcentageRemise" prefWidth="75.0" text="Remise" />
+                    <TableColumn fx:id="colPrixUnitaire" prefWidth="75.0" text="PU Devis" />
+                    <TableColumn fx:id="colPrixUnitaireReponse" prefWidth="75.0" text="PU achat Mars20" />
+                    <TableColumn fx:id="colPrixAchatHT" prefWidth="75.0" text="Prix Achat HT" />
+                </columns>
+            </TableView>
+            <Label layoutX="39.0" layoutY="560.0" prefHeight="18.0" prefWidth="57.0" text="Total HT" />
+            <TextField fx:id="txtTotalHTSource" layoutX="109.0" layoutY="555.0" />
+            <Label layoutX="39.0" layoutY="590.0" prefHeight="18.0" prefWidth="58.0" text="Total TTC" />
+            <TextField fx:id="txtTotalTTCSource" layoutX="109.0" layoutY="590.0" />
+            <Label layoutX="20.0" layoutY="485.0" prefHeight="24.0" prefWidth="401.0" text="En rouge les prix d'achat supérieurs à ceux de la réponse. Voir avec Arrow." />
+
+
+            <TableView fx:id="tableCCQuote" layoutX="767.0" layoutY="85.0" prefHeight="398.0" prefWidth="728.0">
+                <columns>
+                    <TableColumn fx:id="colCCSection" prefWidth="50.0" text="Section" />
+                    <TableColumn fx:id="colCCRefUGAP" prefWidth="75.0" text="Référence UGAP" />
+                    <TableColumn fx:id="colCCRef" prefWidth="75.0" text="Référence" />
+                    <TableColumn fx:id="colCCDesignation" prefWidth="200.0" text="Désignation" />
+                    <TableColumn fx:id="colCCQuantite" prefWidth="50.0" text="Quantité" />
+                    <TableColumn fx:id="colCCPrixPublic" prefWidth="75.0" text="Prix Public" />
+                    <TableColumn fx:id="colCCPrixUnitaire" prefWidth="75.0" text="Prix Unitaire" />
+                    <TableColumn fx:id="colCCPrixVenteHT" prefWidth="75.0" text="Prix HT" />
+                </columns>
+            </TableView>
+
+            <Label layoutX="312.0" layoutY="557.0" prefHeight="18.0" prefWidth="57.0" text="Total HT" />
+            <TextField fx:id="txtTotalTTCDest" layoutX="382.0" layoutY="587.0" />
+            <Label layoutX="312.0" layoutY="587.0" prefHeight="18.0" prefWidth="58.0" text="Total TTC" />
+            <TextField fx:id="txtTotalHTDest" layoutX="382.0" layoutY="552.0" />
+
+
+
+            <ListView fx:id="lstOngletsDevis" layoutX="18.0" layoutY="24.0" onMouseClicked="#onClickLstOnglets" prefHeight="53.0" prefWidth="126.0" />
+            <Label layoutX="20.0" layoutY="3.0" text="Sélectionnez l'onglet" />
+            <TextField fx:id="txtFileToConvert" layoutX="767.0" layoutY="36.0" prefHeight="26.0" prefWidth="380.0" />
+            <Button fx:id="btnFileSelector" layoutX="767.0" layoutY="11.0" mnemonicParsing="false" onAction="#onBtnFileSelectorClick" text="Sélectionnez un fichier" />
+            <Separator layoutX="753.0" layoutY="8.0" orientation="VERTICAL" prefHeight="72.0" prefWidth="0.0" />
+            <Separator layoutX="1172.0" layoutY="8.0" orientation="VERTICAL" prefHeight="68.0" prefWidth="4.0" />
+            <Separator layoutX="379.0" layoutY="11.0" orientation="VERTICAL" prefHeight="70.0" prefWidth="1.0" />
+            <ChoiceBox fx:id="choiceDureeSupport" layoutX="531.0" layoutY="53.0" onAction="#onChoiceSupportChange" prefHeight="25.0" prefWidth="68.0" value="1">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="1" />
+                        <String fx:value="2" />
+                        <String fx:value="3" />
+                        <String fx:value="4" />
+                        <String fx:value="5" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+
+            <Label layoutX="531.0" layoutY="7.0" prefHeight="40.0" prefWidth="87.0" text="Durée Support (en années)" wrapText="true" />
+            <Separator layoutX="287.0" layoutY="514.0" orientation="VERTICAL" prefHeight="118.0" prefWidth="0.0" />
+            <Separator layoutX="9.0" layoutY="516.0" prefHeight="0.0" prefWidth="739.0" />
+            <Separator layoutX="551.0" layoutY="516.0" orientation="VERTICAL" prefHeight="118.0" prefWidth="0.0" />
+            <Label layoutX="20.0" layoutY="524.0" text="Devis Arrow" />
+            <Label layoutX="293.0" layoutY="524.0" text="Devis Computacenter" />
+            <Button fx:id="btnExport" layoutX="1289.0" layoutY="573.0" mnemonicParsing="false" onAction="#exporter" prefHeight="35.0" prefWidth="206.0" text="Exporter" />
+            <Separator layoutX="153.0" layoutY="9.0" orientation="VERTICAL" prefHeight="70.0" prefWidth="1.0" />
+            <TextArea fx:id="txtDesignationDevis" layoutX="159.0" layoutY="22.0" prefHeight="57.0" prefWidth="206.0" promptText="Désignation Devis" wrapText="true" />
+            <Label layoutX="159.0" layoutY="6.0" text="Désignation" />
+            <Separator layoutX="764.0" layoutY="521.0" orientation="VERTICAL" prefHeight="118.0" prefWidth="0.0" />
+            <Label layoutX="778.0" layoutY="525.0" text="Markup UGAP en %" />
+            <TextField fx:id="txtMarkupUgap" layoutX="889.0" layoutY="521.0" prefHeight="26.0" prefWidth="50.0" text="9" />
+            <Label layoutX="778.0" layoutY="562.0" prefHeight="18.0" prefWidth="57.0" text="Total HT" />
+            <TextField fx:id="txtTotalTTCUgap" layoutX="848.0" layoutY="592.0" />
+            <Label layoutX="778.0" layoutY="592.0" prefHeight="18.0" prefWidth="58.0" text="Total TTC" />
+            <TextField fx:id="txtTotalHTUGAP" layoutX="848.0" layoutY="557.0" />
+            <Button fx:id="btnAppliquerMarkupUgap" layoutX="947.0" layoutY="521.0" mnemonicParsing="false" onAction="#onClickAppliquerMarkupUgap" prefHeight="25.0" prefWidth="132.0" text="Appliquer markup" />
+            <Separator layoutX="1090.0" layoutY="516.0" orientation="VERTICAL" prefHeight="118.0" prefWidth="0.0" />
+            <Separator layoutX="519.0" layoutY="9.0" orientation="VERTICAL" prefHeight="70.0" prefWidth="1.0" />
+            <Label layoutX="385.0" layoutY="7.0" prefHeight="40.0" prefWidth="146.0" text="Catégorie Produit" />
+            <ChoiceBox fx:id="choiceCategorieProduit" layoutX="386.0" layoutY="53.0" onAction="#onChoiceCategorieProduitChange" prefHeight="25.0" prefWidth="126.0" value="ODA X8-2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="ODA X8-2" />
+                        <String fx:value="Exadata X3-2" />
+                        <String fx:value="Exadata X4-2" />
+                        <String fx:value="Exadata X6-2" />
+                        <String fx:value="Exadata X7-2" />
+                        <String fx:value="ExaData X8-2" />
+                        <String fx:value="Exadata X8-8" />
+                        <String fx:value="Exadata X8M-2" />
+                        <String fx:value="Exadata X8M-8" />
+                        <String fx:value="Engineered Systems" />
+                        <String fx:value="SuperCluster M7" />
+                        <String fx:value="SuperCluster" />
+                        <String fx:value="SuperCluster M8" />
+                        <String fx:value="MiniCluster S7-2" />
+                        <String fx:value="BigData X7-2" />
+                        <String fx:value="PCA X5-2" />
+                        <String fx:value="PCA X7-2" />
+                        <String fx:value="PCA X8-2" />
+                        <String fx:value="SPARC S7-2" />
+                        <String fx:value="SPARC S7-2L" />
+                        <String fx:value="SPARC T8-1" />
+                        <String fx:value="SPARC T8-2" />
+                        <String fx:value="SPARC T8-4" />
+                        <String fx:value="Tape" />
+                        <String fx:value="S-TEK SL150" />
+                        <String fx:value="S-TEK SL4000" />
+                        <String fx:value="ZDLR X8" />
+                        <String fx:value="ZDLR X8M" />
+                        <String fx:value="ZFS ZS7-2" />
+                        <String fx:value="ZFS X5-2" />
+                        <String fx:value="ZFS X8-2" />
+                        <String fx:value="P2I Oracle" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <ChoiceBox fx:id="choiceExportType" layoutX="1124.0" layoutY="584.0" prefWidth="150.0" value="Devis Interne">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Devis Client" />
+                        <String fx:value="Devis Interne" />
+                        <String fx:value="Devis pour analyse" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <Label layoutX="1105.0" layoutY="561.0" prefHeight="17.0" prefWidth="94.0" text="Type de devis" />
+      <Separator layoutX="618.0" layoutY="9.0" orientation="VERTICAL" prefHeight="70.0" prefWidth="1.0" />
+      <CheckBox fx:id="checkBoxUtiliserPromos" layoutX="634.0" layoutY="36.0" mnemonicParsing="false" onAction="#onCheckBoxActionEvent" prefHeight="26.0" prefWidth="110.0" text="Utiliser Promos" />
+
+        </children></AnchorPane>

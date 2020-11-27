@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="aboutTab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DevisOracle.controllers.AboutTabController">
+
+        <children>
+            <Label layoutX="75.0" layoutY="70.0" prefHeight="33.0" prefWidth="310.0" text="Version : 1.3.5 du 25/11/2020" />
+            <Label layoutX="83.0" layoutY="542.0" prefHeight="33.0" prefWidth="310.0" text="Programme réalisé par Majd AISSAOUI" />
+            <ImageView fitHeight="416.0" fitWidth="647.0" layoutX="554.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../hawk.png" />
+                </image>
+            </ImageView>
+            <Label layoutX="75.0" layoutY="14.0" prefHeight="62.0" prefWidth="310.0" style="-fx-font-size: 20;" text="Gestion des Devis Oracle" />
+            <Label layoutX="83.0" layoutY="566.0" prefHeight="33.0" prefWidth="230.0" text="majd.aissaoui@computacenter.com" />
+      <TextArea editable="false" layoutX="69.0" layoutY="244.0" prefHeight="264.0" prefWidth="562.0" text="Principales règles de fonctionnement&#10;       - Ceci est un outil d'aide à la réalisation de devis. Il n'entend en aucun cas se subsituer au travail des SOM/POM&#10;       - Veuillez TOUJOURS verifier les devis générés &#10;       - Le support est calculé automatiquement, et ne reprend pas les refs dans le devis Arrow &#10;       - Certaines références n'ont pas de support (mysql, linux, ...). Celles-ci sont nommément listées dans les règles métier (rules2.json). Il se peut que du support soit rajouté à des références qui ne le nécessitent pas. &#10;       - Si les promotions sont activées, les régles métier (changements de refs) ne sont pas appliquées.&#10;- " wrapText="true" />
+        </children>
+    </AnchorPane>

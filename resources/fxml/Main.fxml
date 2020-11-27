@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+         prefHeight="677.0" prefWidth="1518.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1"
+         xmlns:fx="http://javafx.com/fxml/1" fx:controller="DevisOracle.controllers.MainController">
+
+        <tabs>
+          <Tab text="Devis Fournisseur">
+               <content>
+                  <fx:include fx:id="arrowTab" source="ArrowTab.fxml" />
+               </content>
+          </Tab>
+          <Tab text="Devis Manuel">
+               <content>
+                  <fx:include fx:id="devisManuelTab" source="DevisManuelTab.fxml" />
+               </content>
+          </Tab>
+            <Tab text="Renouvellement Support">
+                <content>
+                    <fx:include fx:id="renewSupportTab" source="RenewSupportTab.fxml" />
+                </content>
+            </Tab>
+            <Tab text="Devis Digora">
+                <content>
+                    <fx:include fx:id="devisDigoraTab" source="DevisDigoraTab.fxml" />
+                </content>
+            </Tab>
+            <Tab text="Configuration">
+                <content>
+                    <fx:include fx:id="configurationTab" source="ConfigurationTab.fxml" />
+                </content>
+            </Tab>
+            <Tab text="Logs">
+                <content>
+                    <fx:include fx:id="logsTab" source="LogsTab.fxml" />
+                </content>
+            </Tab>
+            <Tab text="A propos de ...">
+                <content>
+                    <fx:include fx:id="aboutTab" source="AboutTab.fxml" />
+                </content>
+            </Tab>
+        </tabs>
+
+
+      </TabPane>
+

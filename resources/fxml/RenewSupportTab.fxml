@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import java.lang.*?>
+
+
+<AnchorPane fx:id="renewSupportTab" minHeight="0.0" minWidth="0.0" prefHeight="621.0" prefWidth="1268.0"
+            fx:controller="DevisOracle.controllers.RenewSupportTabController" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+        <children>
+            <ListView fx:id="lstOngletsRenewSupport" layoutX="18.0" layoutY="24.0" onMouseClicked="#onClickLstOngletsRenew" prefHeight="114.0" prefWidth="258.0" />
+            <Label layoutX="20.0" layoutY="3.0" text="Sélectionnez l'onglet" />
+            <Pane fx:id="paneReenewDragFileHere" layoutX="1003.0" layoutY="10.0" onDragDropped="#onRenewDragFileDropped" onDragOver="#onDragFileOver" prefHeight="82.0" prefWidth="457.0">
+                <children>
+                    <Label layoutX="197.0" layoutY="33.0" text="Déposez votre fichier ici" />
+                </children>
+                <effect>
+                    <Glow />
+                </effect>
+            </Pane>
+            <TextField fx:id="txtRenewFileToConvert" layoutX="361.0" layoutY="69.0" prefHeight="25.0" prefWidth="443.0" />
+            <Button fx:id="btnRenewFileSelector" layoutX="361.0" layoutY="39.0" mnemonicParsing="false" onAction="#onBtnRenewFileSelectorClick" text="Sélectionnez un Fichier" />
+            <Button layoutX="1151.0" layoutY="497.0" mnemonicParsing="false" onAction="#onExportRenewQuotes" prefHeight="76.0" prefWidth="146.0" text="Exporter les Devis" />
+            <TableView fx:id="tableSupportRenew" layoutX="41.0" layoutY="175.0" prefHeight="398.0" prefWidth="1021.0">
+                <columns>
+                    <TableColumn fx:id="colRenewRefUGAP" prefWidth="99.0" text="Référence UGAP" />
+                    <TableColumn fx:id="colRenewClient" prefWidth="104.0" text="Client" />
+                    <TableColumn fx:id="colRenewContrat" prefWidth="174.0" text="Contrat" />
+                    <TableColumn fx:id="colRenewDesignation" prefWidth="73.0" text="Désignation" />
+                    <TableColumn fx:id="colRenewCSI" prefWidth="108.0" text="CSI" />
+                    <TableColumn fx:id="colRenewQte" prefWidth="121.0" text="Quantité" />
+                    <TableColumn fx:id="colRenewPrixPublicOracle" prefWidth="142.0" text="Prix Public" />
+                    <TableColumn fx:id="colRenewPrixAchatUGAP" prefWidth="142.0" text="Prix Achat UGAP" />
+                </columns>
+            </TableView>
+        </children>
+    </AnchorPane>

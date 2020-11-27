@@ -1,0 +1,142 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.majd.DevisOracle</groupId>
+  <artifactId>DevisOracle</artifactId>
+    <version>1.2</version>
+  <name>DevisOracle</name>
+  <description>DevisOracle</description>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <javafx.version>11.0.2</javafx.version>
+      <mainClass>DevisOracle.DevisOracleMain</mainClass>
+      <moduleName>DevisOracle</moduleName>
+  </properties>
+
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>resources</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>11</release>
+            <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+
+    
+    <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.4</version>
+
+        <executions>
+            <execution>
+                <!-- Default configuration for running -->
+                <id>default-cli</id>
+                <configuration>
+                    <mainClass>DevisOracle.DevisOracleMain</mainClass>
+                </configuration>
+            </execution>
+            <execution>
+                <!-- Configuration for debugging -->
+                <id>debug</id>
+                <configuration>
+                    <options>
+                        <option>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8000</option>
+                    </options>
+                    <mainClass>DevisOracle.DevisOracleMain</mainClass>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+
+</plugins>
+    
+  </build>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi</artifactId>
+  		<version>4.1.2</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi-ooxml</artifactId>
+  		<version>4.1.2</version>
+  	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.openjfx/javafx -->
+	<dependency>
+	    <groupId>org.openjfx</groupId>
+	    <artifactId>javafx</artifactId>
+	    <version>${javafx.version}</version>
+	    <type>pom</type>
+	</dependency>
+	<dependency>
+	    <groupId>org.openjfx</groupId>
+	    <artifactId>javafx-controls</artifactId>
+	    <version>${javafx.version}</version>
+  	</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
+	<dependency>
+	    <groupId>org.openjfx</groupId>
+	    <artifactId>javafx-fxml</artifactId>
+	    <version>${javafx.version}</version>
+	</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4
+	<dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-collections4</artifactId>
+	    <version>4.4</version>
+	</dependency>
+      -->
+      <!-- https://mvnrepository.com/artifact/commons-configuration/commons-configuration -->
+      <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2 -->
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-configuration2</artifactId>
+          <version>2.7</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+      <dependency>
+          <groupId>commons-beanutils</groupId>
+          <artifactId>commons-beanutils</artifactId>
+          <version>1.9.4</version>
+      </dependency>
+      <dependency>
+          <groupId>com.googlecode.json-simple</groupId>
+          <artifactId>json-simple</artifactId>
+          <version>1.1.1</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+      <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+      <dependency>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+          <version>1.2</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+      <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-core</artifactId>
+          <version>2.13.3</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-api</artifactId>
+          <version>2.13.3</version>
+      </dependency>
+
+  </dependencies>
+  
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import java.lang.*?>
+
+
+<AnchorPane fx:id="configurationTab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
+            fx:controller="DevisOracle.controllers.ConfigurationTabController" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+        <TableView fx:id="tableOptions" layoutX="10.0" layoutY="77.0" prefHeight="523.0" prefWidth="1467.0">
+            <columns>
+                <TableColumn fx:id="colOptionObject" prefWidth="207.0" text="Objet" />
+                <TableColumn fx:id="colOptionDesignation" prefWidth="542.0" text="Option" />
+                <TableColumn fx:id="colOptionKey" prefWidth="254.0" text="Clé" />
+                <TableColumn fx:id="colOptionValue" minWidth="0.0" prefWidth="450.0" text="Valeur" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnReloadCatalogue" layoutX="1302.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBtnClickReloadCatalogue" prefHeight="42.0" prefWidth="195.0" text="Recharger le Catalogue" />
+        <Button fx:id="btnReloadBusinessRules" layoutX="1089.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBtnClickReloadBusinessRules" prefHeight="42.0" prefWidth="195.0" text="Recharger les Règles Métier" />
+
+    </children>
+</AnchorPane>
